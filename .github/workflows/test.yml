@@ -4,12 +4,10 @@ jobs:
   strategy:
     matrix:
       os: [ubuntu-latest, macos-latest]
-
-  build:
-    runs-on: ${{ matrix.os }}
-    steps: 
-      - uses: actions/checkout@v3
-      - name: make
-        run: make hello
-      - name: run
-        run: ./hello
+  runs-on: ${{ matrix.os }}
+  steps: 
+    - uses: actions/checkout@v3
+    - name: make
+      run: make hello
+    - name: run
+      run: ./hello
